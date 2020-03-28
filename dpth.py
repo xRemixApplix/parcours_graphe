@@ -1,3 +1,6 @@
+# Modules
+import random
+
 # Modelisation du graphe
 Graph = dict()
 Graph['a'] = ['b','c']
@@ -35,7 +38,7 @@ def dfs(graph, s):
         u = queue[-1]
         R = [y for y in graph[u] if y not in Pere]
         if R:
-            v = R[0]
+            v = random.choice(R)
             Pere[v] = u
             queue.append(v)
         else:
